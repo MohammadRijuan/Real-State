@@ -1,14 +1,14 @@
 let properties = [];
 let selectedFloor = "all";
 let selectedRooms = "all";
-let showingAll = false; 
+let showingAll = false;
 
 // Fetch JSON data
 fetch('./folder/table.json')
-  .then(res =>  res.json())
+  .then(res => res.json())
   .then(data => {
     properties = data;
-    displayProperties(properties.slice(0, 10)); 
+    displayProperties(properties.slice(0, 10));
   })
   .catch(err => console.error("Error fetching JSON:", err));
 
@@ -18,7 +18,7 @@ function displayProperties(data) {
   const tbody = document.getElementById('property-tbody');
   tbody.innerHTML = '';
   data.forEach((p) => {
-    
+
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td>${p.completion}</td>
@@ -88,12 +88,19 @@ document.getElementById('submitBtn').addEventListener('click', () => {
 
 function addAvailabilityClick() {
   document.querySelectorAll('.availability').forEach(cell => {
-    cell.addEventListener('click', () => modal.style.display = 'block');
+    cell.addEventListener('click', () => {
+      const status = cell.textContent.trim().toLowerCase(); 
+      if (status === "on sale") { 
+        modal.style.display = 'block';
+      }
+    });
   });
+
+
 }
 
 
-// ✅ View All / View Less toggle logic
+// View All / View Less toggle logic
 const viewAllBtn = document.querySelector('.apartment-btn button');
 
 if (viewAllBtn) {
@@ -105,7 +112,7 @@ if (viewAllBtn) {
       viewAllBtn.textContent = "View Less Apartments";
       displayProperties(properties);
     } else {
-      // Show only 10 again
+      // Show only 10 
       viewAllBtn.textContent = "View All Apartments";
       displayProperties(properties.slice(0, 10));
     }

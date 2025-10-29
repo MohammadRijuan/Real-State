@@ -14,10 +14,16 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="./asset/logo.png" alt="logo">
+                <img src="./asset/logo.png" alt="logo" />
             </div>
 
-            <div class="nav-items">
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-items" id="navItems">
                 <div class="nav-item">
                     <a href="">Home</a>
                     <a href="">Services</a>
@@ -25,13 +31,13 @@
                     <a href="">About us</a>
                     <a href="">Our Works</a>
                 </div>
-
-                <div>
-                    <button class="nav-btn"><img src="./asset/Phone.svg" alt="">Contact Us</button>
+                <div class="nav-btn-div">
+                    <button class="nav-btn">
+                        <img src="./asset/Phone.svg" alt="" />Contact Us
+                    </button>
                 </div>
             </div>
         </nav>
-
     </header>
 
     <main>
@@ -41,17 +47,26 @@
                 <div class="silder-container">
                     <div class="img-card">
                         <img class="hero-img" src="./asset/Rectangle 1.png" alt="">
+                        <p class="hero-para">Our experts will guide you through personalized tips and routines to help
+                            you achieve your
+                            best skin yet.</p>
                         <img class="people" src="./asset/Images.png" alt="">
                         <img class="rating" src="./asset/Rating.png" alt="">
                     </div>
                     <div class="img-card">
                         <img class="hero-img" src="./asset/Rectangle 1 (2).png" alt="">
+                        <p class="hero-para">Our experts will guide you through personalized tips and routines to help
+                            you achieve your
+                            best skin yet.</p>
                         <img class="people" src="./asset/Images (1).png" alt="">
                         <img class="rating" src="./asset/Rating (2).png" alt="">
                     </div>
                     <div class="img-card">
                         <img class="hero-img" src="./asset/Rectangle 1 (3).png" alt="">
-                        <img class="people" src="./asset/Images.png" alt="">
+                        <p class="hero-para">Our experts will guide you through personalized tips and routines to help
+                            you achieve your
+                            best skin yet.</p>
+                        <img class="people" src="./asset/Images (2).png" alt="">
                         <img class="rating" src="./asset/Rating.png" alt="">
                     </div>
                 </div>
@@ -69,8 +84,7 @@
                         </a>
                     </div>
                     <div>
-                        <img class="" src="./asset/Review.png" alt="">
-
+                        <img class="review" src="./asset/Review.png" alt="">
                     </div>
                 </div>
 
@@ -118,10 +132,9 @@
                     perfect match for your lifestyle!</p>
             </div>
             <div class="expand-img-container">
-                <img src="./asset/empty property (1).png" alt="">
-                <img src="./asset/empty property (1).png" alt="">
-                <img src="./asset/empty property (1).png" alt="">
-                <img src="./asset/empty property (1).png" alt="">
+              
+                <img class="img-relateive" src="./asset/empty property (1).png" alt="">
+                <img class="img-absolute" src="./asset/empty property (2).png" alt="">
             </div>
 
         </section>
@@ -137,6 +150,10 @@
                         offer modern amenities, spacious layouts, and beautiful outdoor spaces perfect for entertaining.
                         Whether you're looking for a cozy starter home or a luxurious estate, we have something for
                         everyone. Explore our gallery to find the perfect match for your lifestyle!</p>
+                    <div class="swiper-pagination"></div>
+
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
                 <div class="swiper mySwiper">
                     <div class="carosel-container swiper-wrapper">
@@ -149,10 +166,6 @@
 
                     </div>
                 </div>
-                <div class="swiper-pagination"></div>
-
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
 
 
             </div>
@@ -361,30 +374,21 @@
 
     <script src="swiper.js"></script>
 
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const images = document.querySelectorAll(".expand-img-container img");
-
-            images.forEach(img => {
-                img.addEventListener("click", () => {
-                    // remove expanded class from all other images
-                    images.forEach(other => {
-                        if (other !== img) other.classList.remove("expanded");
-                    });
-                    // toggle current image
-                    img.classList.toggle("expanded");
-                });
-            });
-        });
-    </script>
-
     <script src="./countup.js"></script>
     <script src="./table.js"></script>
     <script src="./slider.js"></script>
+    <script src="./expand.js"></script>
 
 
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const navItems = document.getElementById("navItems");
 
+        hamburger.addEventListener("click", () => {
+            navItems.classList.toggle("active");
+            hamburger.classList.toggle("open");
+        });
+    </script>
 
 </body>
 
