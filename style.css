@@ -127,8 +127,8 @@ nav {
 }
 
 .hero-img {
-    width: 1320px;
-    height: 454px;
+    max-width: 1320px;
+    /* height: 454px; */
     margin-top: -4%;
     z-index: 1;
 }
@@ -1469,6 +1469,18 @@ nav {
 
     .rating {
         max-width: 26%;
+    }
+
+    .rates{
+        font-size: 100%;
+    }
+
+    .star{
+        max-width: 100%;
+    }
+
+    .reviews{
+        font-size: 100%;
     }
 
     .hero-content {
