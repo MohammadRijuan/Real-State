@@ -43,7 +43,7 @@ nav {
     display: flex;
     gap: 32px;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
 }
 
 .nav-item {
@@ -127,9 +127,10 @@ nav {
 }
 
 .hero-img {
-    max-width: 1320px;
+    width: 1320px;
+    height: 454px;
     margin-top: -4%;
-    z-index: 0;
+    z-index: 1;
 }
 
 .hero-title {
@@ -170,6 +171,46 @@ nav {
 
 }
 
+.rates {
+    font-family: var(--font-helvetica);
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 52px;
+    line-height: 100%;
+    letter-spacing: -0.3px;
+    color: #78261A;
+    margin-top: 0;
+    margin-bottom: 10%;
+}
+
+.reviews {
+    font-family: var(--font-helvetica);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: -0.3px;
+    color:  #78261A;
+    width: 114px;
+    margin: 0;
+   
+
+}
+
+.star {
+    display: flex;
+    flex-direction: column;
+    gap: 6.8px;
+    width: 14.759180068969727px;
+    height: 14.105387687683105px;
+    opacity: 1;
+    margin-bottom: 14%;
+}
+
+.star-1 {
+    display: flex;
+    gap: 6.8px;
+}
+
 
 .img-card {
     position: relative;
@@ -182,9 +223,15 @@ nav {
 }
 
 .rating {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     position: absolute;
     bottom: 0;
     right: 0;
+    width: 230px;
+    height: 63px;
+    z-index: 1;
 }
 
 .btnnn {
@@ -192,6 +239,7 @@ nav {
 
     left: 43%;
     transition: 0.3s ease;
+    z-index: 1;
 }
 
 .btnnn:hover {
@@ -203,7 +251,7 @@ nav {
     position: relative;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 1;
 
 }
 
@@ -244,6 +292,108 @@ nav {
         transform: translateX(0);
     }
 }
+
+
+.review-container {
+  width: 694.5px;
+  height: 282px;
+  opacity: 1;
+  background: #F1F5F9;
+  border-radius: 40px;
+  padding: 12px;
+  position: relative;
+  z-index: 0;
+
+
+  & .m {
+    position: absolute;
+    content: "";
+    height: 63%;
+    background-color:  #F8FAFC;
+    width: 25%;
+    bottom: 0;
+    left: 0;
+    border-top-right-radius: 24px;
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+
+    width: 25px;
+    aspect-ratio: 1;
+   
+    background: radial-gradient(circle 25px at top right, #F1F5F9 95%,  #F8FAFC) top right;
+  }
+
+  &:before {
+    height: 30px !important;
+    top: 29%;
+    left: 0;
+  }
+
+  &:after {
+    
+    bottom: 0;
+    left: 25%;
+  }
+
+
+  & .n {
+    position: absolute;
+    content: "";
+    height: 35%;
+    background-color:  #F8FAFC;
+    width: 77%;
+    top: 0;
+    right: 0;
+    border-bottom-left-radius: 24px;
+   
+  }
+
+  & .n:before,.n:after{
+    position: absolute;
+    content: "";
+    width: 24px;
+    aspect-ratio: 1;
+    background: radial-gradient(circle 25px at bottom left, #F1F5F9 95%,  #F8FAFC) top right;
+  }
+
+  & .n:before{
+    left: -24px;
+
+  }
+  .n:after{
+    bottom:-27px;
+    right: 0;
+  }
+}
+
+.reviewss {
+  width: 449px;
+  height: 96px;
+  font-family: Helvetica;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 160%;
+  letter-spacing: -0.3px;
+  color: #475569;
+  margin-left: 194px;
+}
+
+.author {
+  font-family: Helvetica;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: -0.3px;
+  color: #5C4947;
+  margin-left: 194px;
+}
+
+
 
 
 /* pop-up section */
@@ -431,9 +581,7 @@ nav {
     overflow: hidden;
     background: #000;
     margin: 0 auto;
-    
 }
-
 
 .img-compare {
     position: absolute;
@@ -442,28 +590,27 @@ nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: none;
 }
-
 
 .img-compare-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
     width: 50%;
+    height: 100%;
     overflow: hidden;
     pointer-events: none;
 }
 
-.img-compare,
 .img-compare-overlay img {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 1038px;
     height: 100%;
     object-fit: cover;
 }
+
 
 .slider {
     position: absolute;
@@ -504,7 +651,7 @@ nav {
 }
 
 .nav-but.active {
-    width: 11.08px ;
+    width: 11.08px;
     height: 0px !important;
     border: 1.25px solid #0E7490 !important;
     padding: 0 6px;
@@ -521,7 +668,7 @@ nav {
 
 
 .nav-arrows button {
-    background:none;
+    background: none;
     color: #fff;
     border: none;
     font-size: 20px;
@@ -1402,23 +1549,25 @@ nav {
     }
 
     /* expand image */
-    .expand{
+    .expand {
         max-height: 100%;
     }
+
     .expand-content h1 {
         font-size: 30px;
         line-height: 40px;
         max-width: 100%;
     }
 
-    .expand-img-container{
+    .expand-img-container {
         width: 100%;
         height: 100%;
     }
-    .img-compare-container{
+
+    .img-compare-container {
         width: 95vw;
         overflow-x: hidden;
-    
+
 
 
     }
