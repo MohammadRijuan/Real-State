@@ -1468,19 +1468,28 @@ nav {
     }
 
     .rating {
-        max-width: 26%;
+        max-width: 46%;
+        bottom: 33px;
+    }
+
+    .line{
+        max-width: 31%;
     }
 
     .rates{
         font-size: 100%;
     }
 
-    .star{
+    .star,.star-1{
         max-width: 100%;
     }
 
+    .star-1 img{
+        max-width: 8px;
+    }
+
     .reviews{
-        font-size: 100%;
+        font-size: 8px;
     }
 
     .hero-content {
@@ -1504,6 +1513,36 @@ nav {
     .review {
         max-width: 100%;
     }
+
+    .review-container{
+        width: 100%;
+        height: 100%;
+    }
+
+    .review-container img{
+        max-width: 20%;
+    }
+
+    .reviewss{
+        width: 100%;
+        height: 100%;
+        font-size: 12px;
+        margin-left: 27%;
+    }
+
+    .author{
+        font-size: 12px;
+        margin-left: 30%;
+    }
+
+    .review-container {
+    & .n:before, .n:after {
+        
+        
+        width: 0px;
+        
+    }
+}
 
     /* popup */
     .pop-up-container {
