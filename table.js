@@ -100,7 +100,7 @@ function addAvailabilityClick() {
 }
 
 
-// View All / View Less toggle logic
+
 const viewAllBtn = document.querySelector('.apartment-btn button');
 
 if (viewAllBtn) {

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const counters = document.querySelectorAll('.count');
   let currentIndex = 0;
 
-  // Format with commas only (no k, no M)
+  // Format with commas only 
   function formatNumber(num) {
     return num.toLocaleString();
   }

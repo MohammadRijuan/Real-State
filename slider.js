@@ -13,6 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     showSlide(current);
   }
 
-  showSlide(current); // show first slide
-  setInterval(nextSlide, 4000); // change every 4 seconds
+  showSlide(current); 
+  setInterval(nextSlide, 4000); 
 });
