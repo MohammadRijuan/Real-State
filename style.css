@@ -127,10 +127,12 @@ nav {
 }
 
 .hero-img {
-    max-width: 1320px;
-    /* height: 454px; */
+    width: 1320px;
+    height: 454px;
     margin-top: -4%;
     z-index: 1;
+    clip-path: polygon(0 15%, 11% 15%, 13% 0, 32% 0, 35% 14%, 100% 14%, 100% 80%, 43% 80%, 40% 100%, 21% 100%, 7% 100%, 0 83%);
+    overflow: hidden;
 }
 
 .hero-title {
@@ -189,10 +191,10 @@ nav {
     font-size: 20px;
     line-height: 100%;
     letter-spacing: -0.3px;
-    color:  #78261A;
+    color: #78261A;
     width: 114px;
     margin: 0;
-   
+
 
 }
 
@@ -295,102 +297,104 @@ nav {
 
 
 .review-container {
-  width: 694.5px;
-  height: 282px;
-  opacity: 1;
-  background: #F1F5F9;
-  border-radius: 40px;
-  padding: 12px;
-  position: relative;
-  z-index: 0;
+    width: 694.5px;
+    height: 282px;
+    opacity: 1;
+    background: #F1F5F9;
+    border-radius: 40px;
+    padding: 12px;
+    position: relative;
+    z-index: 0;
 
 
-  & .m {
-    position: absolute;
-    content: "";
-    height: 63%;
-    background-color:  #F8FAFC;
-    width: 25%;
-    bottom: 0;
-    left: 0;
-    border-top-right-radius: 24px;
-  }
+    & .m {
+        position: absolute;
+        content: "";
+        height: 63%;
+        background-color: #F8FAFC;
+        width: 25%;
+        bottom: 0;
+        left: 0;
+        border-top-right-radius: 24px;
+    }
 
-  &:before,
-  &:after {
-    position: absolute;
-    content: "";
+    &:before,
+    &:after {
+        position: absolute;
+        content: "";
 
-    width: 25px;
-    aspect-ratio: 1;
-   
-    background: radial-gradient(circle 25px at top right, #F1F5F9 95%,  #F8FAFC) top right;
-  }
+        width: 25px;
+        aspect-ratio: 1;
 
-  &:before {
-    height: 30px !important;
-    top: 29%;
-    left: 0;
-  }
+        background: radial-gradient(circle 25px at top right, #F1F5F9 95%, #F8FAFC) top right;
+    }
 
-  &:after {
-    
-    bottom: 0;
-    left: 25%;
-  }
+    &:before {
+        height: 30px !important;
+        top: 29%;
+        left: 0;
+    }
+
+    &:after {
+
+        bottom: 0;
+        left: 25%;
+    }
 
 
-  & .n {
-    position: absolute;
-    content: "";
-    height: 35%;
-    background-color:  #F8FAFC;
-    width: 77%;
-    top: 0;
-    right: 0;
-    border-bottom-left-radius: 24px;
-   
-  }
+    & .n {
+        position: absolute;
+        content: "";
+        height: 35%;
+        background-color: #F8FAFC;
+        width: 77%;
+        top: 0;
+        right: 0;
+        border-bottom-left-radius: 24px;
 
-  & .n:before,.n:after{
-    position: absolute;
-    content: "";
-    width: 24px;
-    aspect-ratio: 1;
-    background: radial-gradient(circle 25px at bottom left, #F1F5F9 95%,  #F8FAFC) top right;
-  }
+    }
 
-  & .n:before{
-    left: -24px;
+    & .n:before,
+    .n:after {
+        position: absolute;
+        content: "";
+        width: 24px;
+        aspect-ratio: 1;
+        background: radial-gradient(circle 25px at bottom left, #F1F5F9 95%, #F8FAFC) top right;
+    }
 
-  }
-  .n:after{
-    bottom:-27px;
-    right: 0;
-  }
+    & .n:before {
+        left: -24px;
+
+    }
+
+    .n:after {
+        bottom: -27px;
+        right: 0;
+    }
 }
 
 .reviewss {
-  width: 449px;
-  height: 96px;
-  font-family: Helvetica;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 160%;
-  letter-spacing: -0.3px;
-  color: #475569;
-  margin-left: 194px;
+    width: 449px;
+    height: 96px;
+    font-family: Helvetica;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 160%;
+    letter-spacing: -0.3px;
+    color: #475569;
+    margin-left: 194px;
 }
 
 .author {
-  font-family: Helvetica;
-  font-weight: 700;
-  font-style: Bold;
-  font-size: 20px;
-  line-height: 100%;
-  letter-spacing: -0.3px;
-  color: #5C4947;
-  margin-left: 194px;
+    font-family: Helvetica;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: -0.3px;
+    color: #5C4947;
+    margin-left: 194px;
 }
 
 
@@ -1452,8 +1456,8 @@ nav {
 
     .hero-img {
         margin-top: 0;
-        max-width: 100%;
-        max-height: 100%;
+        width: 100%;
+        height: 100%;
     }
 
     .hero-para {
@@ -1468,81 +1472,93 @@ nav {
     }
 
     .rating {
-        max-width: 46%;
-        bottom: 33px;
+        max-width: 31%;
+        bottom:-25%;
+        gap: 10px;
     }
 
-    .line{
+    .line {
         max-width: 31%;
     }
 
-    .rates{
+    .rates {
         font-size: 100%;
     }
 
-    .star,.star-1{
+    .star,
+    .star-1 {
         max-width: 100%;
+        gap: 1.8px;
     }
 
-    .star-1 img{
+    .star-1 img {
         max-width: 8px;
     }
 
-    .reviews{
+    .reviews {
         font-size: 8px;
     }
 
     .hero-content {
         max-width: 100%;
+      
+        height: 195px;
         margin-top: 0;
+        display: flex;
+        justify-content:space-between ;
     }
 
     .hero-title {
         font-size: 100%;
+        width: 100px;
     }
 
     .btnnn {
         max-width: 100%;
-        left: 29%;
+        left: 32%;
     }
 
     .btnnn img {
-        max-width: 30%;
+        max-width: 40%;
     }
 
     .review {
         max-width: 100%;
+        height: 206px;
     }
 
-    .review-container{
-        width: 100%;
+    .review-container {
+        width: 230px;
         height: 100%;
     }
 
-    .review-container img{
+    .review-container img {
         max-width: 20%;
     }
 
-    .reviewss{
-        width: 100%;
+    .reviewss {
+        width: 140px;
         height: 100%;
         font-size: 12px;
+        padding-top: 30px;
         margin-left: 27%;
     }
 
-    .author{
+    .author {
         font-size: 12px;
         margin-left: 30%;
     }
 
     .review-container {
-    & .n:before, .n:after {
-        
-        
-        width: 0px;
-        
+
+        & .n:before,
+        .n:after {
+
+
+            width: 0px;
+
+        }
     }
-}
 
     /* popup */
     .pop-up-container {
@@ -1974,21 +1990,25 @@ nav {
     }
 
     .rating {
-        max-width: 26%;
+        max-width: 37%;
+        gap:10px;
     }
 
     .hero-content {
         max-width: 100%;
         margin-top: 0;
+        display: flex;
+        justify-content: space-around;
     }
 
     .hero-title {
         font-size: 40px;
+        width: 255px;
     }
 
     .btnnn {
         max-width: 100%;
-        left: 45%;
+        left:40%;
     }
 
     .btnnn img {
@@ -1997,6 +2017,30 @@ nav {
 
     .review {
         max-width: 100%;
+    }
+
+    .review-container{
+        width: 100%;
+        height: 100%;
+    }
+
+    .cont{
+        max-width: 100%;
+    }
+    .cont img{
+        max-width: 19%;
+    }
+
+    .reviewss{
+        width: 269px;
+        height: 100%;
+        font-size: 16px;
+        margin-left: 120px;
+        padding-top: 20px;
+    }
+
+    .author{
+        margin-left: 120px;
     }
 
 
@@ -2020,6 +2064,18 @@ nav {
 
     .play {
         max-width: 100%;
+    }
+
+    /* expand img */
+    .expand-img-container{
+        max-width: 100%;
+    }
+    .img-compare-container{
+        width: 100%;
+    }
+
+    .img-compare-overlay, .img-compare-overlay img{
+        width: 100%;
     }
 
 
