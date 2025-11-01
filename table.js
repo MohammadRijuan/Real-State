@@ -38,6 +38,21 @@ function displayProperties(data) {
   addAvailabilityClick();
 }
 
+// active room
+document.querySelectorAll('.room-number a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+
+    document.querySelectorAll('.room-number a').forEach(a => a.classList.remove('active'));
+
+    link.classList.add('active');
+
+    selectedRooms = link.dataset.room;
+    filterProperties();
+  });
+});
+
+
 
 // Handle filters
 document.getElementById('floor-select').addEventListener('change', e => {
@@ -89,8 +104,8 @@ document.getElementById('submitBtn').addEventListener('click', () => {
 function addAvailabilityClick() {
   document.querySelectorAll('.availability').forEach(cell => {
     cell.addEventListener('click', () => {
-      const status = cell.textContent.trim().toLowerCase(); 
-      if (status === "on sale") { 
+      const status = cell.textContent.trim().toLowerCase();
+      if (status === "on sale") {
         modal.style.display = 'block';
       }
     });

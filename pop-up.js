@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     const playBtn = document.querySelector(".play");
-    const bedImg = document.querySelector(".bed");
 
     // Create popup overlay
     const popupOverlay = document.createElement("div");
@@ -14,27 +13,27 @@ document.addEventListener("DOMContentLoaded", function() {
     popupOverlay.style.justifyContent = "center";
     popupOverlay.style.alignItems = "center";
     popupOverlay.style.zIndex = "1000";
-    popupOverlay.style.cursor = "pointer";
 
-    // Create full image inside overlay
-    const fullImg = document.createElement("img");
-    fullImg.src = bedImg.src;
-    fullImg.style.width = "80vw";     
-    fullImg.style.height = "75vh"; 
-    fullImg.style.objectFit = "cover";
-    fullImg.style.borderRadius = "16px";
-    fullImg.style.boxShadow = "0 0 40px rgba(255,255,255,0.3)";
-    popupOverlay.appendChild(fullImg);
-
-   
+    // Create iframe for YouTube video
+    const iframe = document.createElement("iframe");
+    iframe.width = "80%";
+    iframe.height = "75%";
+    iframe.style.border = "none";
+    iframe.style.borderRadius = "16px";
+    iframe.allow = "autoplay; encrypted-media";
+    iframe.allowFullscreen = true;
+    
+    popupOverlay.appendChild(iframe);
     document.body.appendChild(popupOverlay);
 
     playBtn.addEventListener("click", function() {
+        iframe.src = "https://www.youtube.com/embed/qemqQHaeCYo?autoplay=1";
         popupOverlay.style.display = "flex";
     });
 
-
+    // Close popup on click
     popupOverlay.addEventListener("click", function() {
         popupOverlay.style.display = "none";
+        iframe.src = ""; 
     });
 });

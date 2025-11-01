@@ -3,20 +3,21 @@ const container = document.querySelector('.expand-img-container');
 const cards = Array.from(container.children);
 const bullets = document.querySelectorAll('.nav-but');
 
-// === Clone first and last for infinite loop ===
+// Clone first and last for infinite loop 
 const firstClone = cards[0].cloneNode(true);
 const lastClone = cards[cards.length - 1].cloneNode(true);
+console.log(firstClone)
 container.appendChild(firstClone);
 container.insertBefore(lastClone, cards[0]);
 
 const allCards = Array.from(container.children);
 let cardWidth = allCards[0].offsetWidth;
-let currentIndex = 1; // start at first real card
+let currentIndex = 1;
 
 // Scroll to first real card
 container.scrollLeft = cardWidth * currentIndex;
 
-// === Before/After slider inside each card ===
+
 allCards.forEach(containerCard => {
   const slider = containerCard.querySelector('.slider');
   const overlay = containerCard.querySelector('.img-compare-overlay');

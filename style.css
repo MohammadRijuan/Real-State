@@ -252,8 +252,22 @@ nav {
     width: 100%;
     height: 100%;
     z-index: 1;
-
 }
+
+.review{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    display: flex;
+}
+
+
+.review-container.active {
+  display: block;
+}
+
 
 .img-card {
     position: absolute;
@@ -308,6 +322,9 @@ nav {
     padding: 12px;
     position: relative;
     z-index: 0;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+    margin-left: 21%;
 
 
     & .m {
@@ -451,6 +468,26 @@ nav {
 }
 
 
+
+/* scroll */
+
+.gallery-container {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.gallery-slide {
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.gallery-slide.active {
+  display: block;
+}
+
+
 .gallery-content {
     background: #F7F5F2;
 
@@ -516,6 +553,7 @@ nav {
 
 
 /* expand */
+
 .expand {
     background: #F8FAFC;
 }
@@ -574,6 +612,7 @@ nav {
     padding: 10px;
     scrollbar-width: none;
     margin: 0 auto;
+    scroll-snap-type: x mandatory;
 }
 
 .expand-img-container::-webkit-scrollbar {
@@ -582,12 +621,14 @@ nav {
 
 .img-compare-container {
     position: relative;
-    flex: 0 0 auto;
+    flex: 0 0 auto ;
     width: 1038px;
     height: 488px;
     overflow: hidden;
     background: #000;
     margin: 0 auto;
+    scroll-snap-align: center; 
+    transition: all 0.3s ease; 
 }
 
 .img-compare {
@@ -1049,13 +1090,11 @@ nav {
 
 .room-number {
     margin-top: 16px;
-    /* display: flex; */
     gap: 12px;
 }
 
 .room-number a {
     width: 40px !important;
-
     text-decoration: none;
     padding: 11px 16px;
     border-radius: 20px;
@@ -1072,6 +1111,10 @@ nav {
     color: var(--font-base-color);
     cursor: pointer;
     margin-right: 10px;
+}
+
+.room-number a.active{
+    background: yellow;
 }
 
 .property-table {
