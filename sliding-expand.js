@@ -6,7 +6,7 @@ const bullets = document.querySelectorAll('.nav-but');
 // Clone first and last for infinite loop 
 const firstClone = cards[0].cloneNode(true);
 const lastClone = cards[cards.length - 1].cloneNode(true);
-console.log(firstClone)
+
 container.appendChild(firstClone);
 container.insertBefore(lastClone, cards[0]);
 
@@ -92,8 +92,6 @@ container.addEventListener('scroll', () => {
     currentIndex = 1;
   }
 });
-
-
 
 // Touch drag
 container.addEventListener('touchstart', e => {
