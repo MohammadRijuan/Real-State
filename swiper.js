@@ -53,3 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   showSlide(current);
 });
+
+
+

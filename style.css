@@ -72,7 +72,8 @@ nav {
 
 .nav-item a:hover,
 .nav-btn:hover {
-    transform: scale(1.1);
+    background-color: #000;
+    color: white;
 }
 
 .nav-btn {
@@ -613,7 +614,15 @@ nav {
     scrollbar-width: none;
     margin: 0 auto;
     scroll-snap-type: x mandatory;
+    overflow: hidden;
+  position: relative;
 }
+
+
+
+
+
+
 
 .expand-img-container::-webkit-scrollbar {
     display: none;
@@ -723,6 +732,8 @@ nav {
     cursor: pointer;
     padding: 0;
 }
+
+
 
 
 
