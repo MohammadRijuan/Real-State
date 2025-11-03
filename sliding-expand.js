@@ -120,6 +120,20 @@ const expandImgSwiper = new Swiper('.cus-swiper', {
         el: '.bullet-nav',
         clickable: true,
     },
+    breakpoints: {
+        576: {
+            slidesPerView: 1,
+            spaceBetween: 20
+        },
+        768: {
+            slidesPerView: 1,
+            spaceBetween: 32
+        },
+        1024: {
+            slidesPerView: "auto",
+            spaceBetween: 32
+        }
+    },
     // allowTouchMove: false,
     // centeredSlides: true,   
 });

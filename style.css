@@ -232,7 +232,13 @@ nav {
     width: 230px;
     height: 63px;
     z-index: 1000;
-      visibility: visible !important;
+    visibility: visible !important;
+}
+
+.cont img {
+    max-width: 136px;
+    max-height: 88px;
+    border-radius: 35px;
 }
 
 .btnnn {
@@ -255,7 +261,7 @@ nav {
     z-index: 1;
 }
 
-.review{
+.review {
     position: relative;
     width: 100%;
     height: 100%;
@@ -266,7 +272,7 @@ nav {
 
 
 .review-container.active {
-  display: block;
+    display: block;
 }
 
 
@@ -278,7 +284,8 @@ nav {
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
-.parent{
+
+.parent {
     filter: url('#goo');
     z-index: 2;
 }
@@ -473,19 +480,19 @@ nav {
 /* scroll */
 
 .gallery-container {
-  position: relative;
-  max-width: 400px;
-  margin: 0 auto;
-  overflow: hidden;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .gallery-slide {
-  display: none;
-  transition: all 0.3s ease;
+    display: none;
+    transition: all 0.3s ease;
 }
 
 .gallery-slide.active {
-  display: block;
+    display: block;
 }
 
 
@@ -615,7 +622,7 @@ nav {
     margin: 0 auto;
     scroll-snap-type: x mandatory;
     overflow: hidden;
-  position: relative;
+    position: relative;
 }
 
 
@@ -625,13 +632,13 @@ nav {
 
 .img-compare-container {
     position: relative;
-    flex: 0 0 auto ;
+    flex: 0 0 auto;
     width: 1038px;
     height: 488px;
     overflow: hidden;
     background: #000;
     margin: 0 auto;
-    scroll-snap-align: center; 
+    scroll-snap-align: center;
     /* cursor: grab; */
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -731,17 +738,17 @@ nav {
 
 
 /* cus-swiper */
-.cus-swiper.swiper{
+.cus-swiper.swiper {
     width: auto !important;
 }
 
-.cus-swiper .swiper-wrapper{
+.cus-swiper .swiper-wrapper {
     width: 1038px !important;
     margin: 0 auto;
     scroll-snap-type: x mandatory;
 }
 
-.img-compare-container .swiper-slide{
+.img-compare-container .swiper-slide {
     width: 1038px !important;
     scroll-snap-align: center;
 }
@@ -776,7 +783,7 @@ nav {
 
 .bullet-nav.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
     left: 0% !important;
-     position: relative;
+    position: relative;
 }
 
 
@@ -1168,7 +1175,7 @@ nav {
     margin-right: 10px;
 }
 
-.room-number a.active{
+.room-number a.active {
     background: yellow;
 }
 
@@ -1548,6 +1555,8 @@ nav {
 
     .hero-container {
         max-width: 100%;
+        max-height: 100%;
+        padding-bottom: 10px;
     }
 
     .img-card {
@@ -1603,20 +1612,24 @@ nav {
     .hero-content {
         max-width: 100%;
 
-        height: 195px;
-        margin-top: 0;
+        height: 100%;
+        margin-top: 10%;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
+        align-items: center;
     }
 
     .hero-title {
         font-size: 100%;
-        width: 100px;
+        /* width: 100px; */
     }
 
     .btnnn {
         max-width: 100%;
-        left: 32%;
+        margin-top: 5%;
+        left: 0%;
+        position: relative;
     }
 
     .btnnn img {
@@ -1625,24 +1638,31 @@ nav {
 
     .review {
         max-width: 100%;
-        height: 206px;
+        height: 100%;
     }
 
     .review-container {
-        width: 230px;
+        width: 100%;
         height: 100%;
+        margin-left: 0;
     }
 
     .review-container img {
         max-width: 20%;
     }
 
+    .conten {
+        height: 100%;
+    }
+
     .reviewss {
-        width: 140px;
+        width: 220px;
         height: 100%;
         font-size: 12px;
-        padding-top: 30px;
-        margin-left: 27%;
+        /* padding-top: 30px; */
+        margin-top: 14%;
+        margin-left: 26%;
+
     }
 
     .author {
@@ -1716,6 +1736,14 @@ nav {
         margin-top: 0;
     }
 
+    .gallery-container {
+        max-height: 100%;
+    }
+
+    .gallery-desc {
+        max-height: 100%;
+    }
+
     /* expand image */
     .expand {
         max-height: 100%;
@@ -1735,10 +1763,23 @@ nav {
     .img-compare-container {
         width: 95vw;
         overflow-x: hidden;
-
-
-
     }
+
+    .cus-swiper.swiper {
+        width: 100% !important;
+    }
+
+    .cus-swiper .swiper-wrapper {
+        width:auto !important;
+        margin: 0 auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .img-compare-container .swiper-slide {
+        width: 100% !important;
+        scroll-snap-align: center;
+    }
+
 
     /* scroll section */
     .swiper-head {
