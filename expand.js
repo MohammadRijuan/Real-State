@@ -1,20 +1,20 @@
 function initCompareControls() {
-  // select both original and cloned slides (loop creates clones)
+  
   const containers = document.querySelectorAll('.img-compare-container');
 
-  // safety helpers to enable/disable swiper reliably
+ 
   const disableSwiperTouch = () => {
     if (window.expandImgSwiper && typeof window.expandImgSwiper === 'object') {
       window.expandImgSwiper.allowTouchMove = false;
     }
-    // clear any previous re-enable timeout
+    
     if (window.__enableSwiperTimeout) {
       clearTimeout(window.__enableSwiperTimeout);
       window.__enableSwiperTimeout = null;
     }
   };
   const enableSwiperTouch = (delay = 0) => {
-    // schedule a safe re-enable so it never gets stuck
+ 
     if (window.__enableSwiperTimeout) clearTimeout(window.__enableSwiperTimeout);
     window.__enableSwiperTimeout = setTimeout(() => {
       if (window.expandImgSwiper && typeof window.expandImgSwiper === 'object') {
@@ -25,14 +25,14 @@ function initCompareControls() {
   };
 
   containers.forEach(container => {
-    // avoid double-init
+  
     if (container.dataset.compareInited === 'true') return;
     container.dataset.compareInited = 'true';
 
     const overlay = container.querySelector('.img-compare-overlay');
     const slider = container.querySelector('.slider');
 
-    // initial position (half)
+    
     const setInitial = () => {
       const w = container.clientWidth || container.offsetWidth || 0;
       const half = Math.round(w / 2);
@@ -46,29 +46,28 @@ function initCompareControls() {
     let activePointerId = null;
 
     function startPointer(e) {
-      // only handle primary pointer
+   
       if (e.isPrimary === false) return;
 
-      // mark dragging and block swiper gestures
       dragging = true;
       activePointerId = e.pointerId;
 
-      // it's important to stop propagation so Swiper doesn't pick it up
+      
       e.preventDefault && e.preventDefault();
       e.stopPropagation && e.stopPropagation();
 
       disableSwiperTouch();
 
-      // try to capture pointer so we keep receiving events
+ 
       try { slider.setPointerCapture(activePointerId); } catch (err) {}
     }
 
     function movePointer(e) {
-      // only proceed if dragging and pointer matches
+      
       if (!dragging) return;
       if (activePointerId !== null && e.pointerId !== activePointerId) return;
 
-      // prevent Swiper from handling move
+      
       e.preventDefault && e.preventDefault();
       e.stopPropagation && e.stopPropagation();
 
@@ -81,17 +80,17 @@ function initCompareControls() {
     }
 
     function endPointer(e) {
-      // if pointerId exists, ensure same pointer triggered end (or accept any pointerup)
+
       if (activePointerId !== null && e.pointerId !== activePointerId && e.type === 'pointerup') {
         return;
       }
       dragging = false;
       activePointerId = null;
 
-      // release capture if possible
+     
       try { slider.releasePointerCapture && slider.releasePointerCapture(e.pointerId); } catch (err) {}
 
-      // re-enable swiper immediately (with tiny delay to be safe)
+    
       enableSwiperTouch(10);
     }
 
