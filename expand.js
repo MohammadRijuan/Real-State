@@ -105,7 +105,7 @@ function initCompareControls() {
       if (dragging) endPointer(e);
     });
 
-    // Extra global safety: if page visibility changes or window loses focus, re-enable swiper
+   
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) enableSwiperTouch(0);
     });
@@ -113,21 +113,19 @@ function initCompareControls() {
   });
 }
 
-/* Initialize on DOM ready and after Swiper is available */
+
 document.addEventListener('DOMContentLoaded', () => {
-  // make sure expandImgSwiper is on window so compare code can access
-  // (if you create expandImgSwiper in a local scope, assign it to window.expandImgSwiper)
-  // e.g. window.expandImgSwiper = new Swiper(...)
+  
   initCompareControls();
 
-  // ensure clones have handlers after Swiper initialization
+  
   if (window.expandImgSwiper && window.expandImgSwiper.on) {
     window.expandImgSwiper.on('init', () => initCompareControls());
     window.expandImgSwiper.on('slideChange', () => initCompareControls());
-    // also ensure touchMove is allowed initially
+    
     window.expandImgSwiper.allowTouchMove = true;
   } else {
-    // If Swiper is initialized later, call init again
+   
     setTimeout(initCompareControls, 300);
   }
 });
